@@ -1,6 +1,10 @@
 import { Request, Response } from "express";
 import User from "../models/userModel";
 
+const authUser = async (_req: Request, res: Response) => {
+  res.status(200).json({ message: "Auth User" });
+};
+
 const registerUser = async (
   req: Request,
   res: Response
@@ -30,4 +34,4 @@ const registerUser = async (
   }
 };
 
-export { registerUser };
+export { authUser, registerUser };
