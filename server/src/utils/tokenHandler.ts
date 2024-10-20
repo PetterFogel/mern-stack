@@ -7,7 +7,7 @@ export const tokenHandler = (res: Response, userId: Types.ObjectId) => {
     expiresIn: "30d",
   });
 
-  res.cookie("jwt", token, {
+  res.cookie("token", token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
   });
