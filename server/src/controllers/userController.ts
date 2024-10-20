@@ -58,4 +58,10 @@ const loginUser = async (
   res.status(401).json({ message: "Invalid email or password" });
 };
 
-export { authUser, registerUser, loginUser };
+const logoutUser = async (_req: Request, res: Response) => {
+  res.clearCookie("token");
+
+  res.status(200).json({ message: "User was logged out" });
+};
+
+export { authUser, registerUser, loginUser, logoutUser };
